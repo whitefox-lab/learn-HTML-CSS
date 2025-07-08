@@ -55,3 +55,57 @@ a {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
+.grid-container {
+  display: grid;
+  height: 400px;
+  width: 400px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+  color: black;
+}
+
+.item {
+  background: lightblue;
+  padding: 20px;
+  text-align: center;
+  align-content: center;
+  border-radius: 8px;
+}
+
+.item:nth-child(1) {
+  grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-color: #ffe;
+    font-size: 18px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.card:hover,
+.item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animated-box {
+  margin-top: 40px;
+  animation: fadeIn 1s ease forwards;
+}
